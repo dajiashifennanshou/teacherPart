@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xrefreshview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/students_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/students_comfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="确定" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:layout_height="40dp">
+        <EditText
+            android:id="@+id/students_input_ex"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="请输入姓名（张三）或班级（1）"
+            android:textColorHighlight="@color/lightgray"
+            android:background="@drawable/login_input_shape"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <!--<com.andview.refreshview.XRefreshView-->
+    <!--android:id="@+id/students_refresh"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#fff"-->
+    <!--android:orientation="vertical"-->
+    <!--xrefreshview:isHeightMatchParent="true"-->
+    <!--xrefreshview:isWidthMatchParent="true">-->
+
+    <!--<ListView-->
+    <!--android:id="@+id/students_list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content" />-->
+    <!--</com.andview.refreshview.XRefreshView>-->
+    <TextView
+        android:id="@+id/students_noting"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/red"
+        android:padding="10dp"
+        android:text="没有找到相关学生"
+        android:layout_height="40dp" />
+    <com.chanven.lib.cptr.PtrClassicFrameLayout
+        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/students_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        cube_ptr:ptr_duration_to_close="200"
+        cube_ptr:ptr_duration_to_close_header="700"
+        cube_ptr:ptr_keep_header_when_refresh="true"
+        cube_ptr:ptr_pull_to_fresh="false"
+        cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+        cube_ptr:ptr_resistance="1.8" >
+        <ListView
+            android:id="@+id/students_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="0.1dp"
+            android:background="@android:color/white"
+            android:divider="#b0b0b0"
+            android:scrollbars="none"
+            android:choiceMode="singleChoice"
+            android:fadingEdge="none" />
+    </com.chanven.lib.cptr.PtrClassicFrameLayout>
+</LinearLayout>
